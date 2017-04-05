@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ngMinnWeb" >
+    <head>
+      <meta charset="utf-8"/>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+      <link href="./p/minn/styles/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+      <link href="./p/minn/styles/jquery.mobile.min.css" rel="stylesheet"/>
+      <link href="./p/minn/styles/jquery-confirm2/dist/jquery-confirm.min.css" rel="stylesheet"/>
+      <link src="../bower_components/mobile-angilar-ui/dist/css/"/>
+      <link href="./p/minn/styles/minnstyle.css" rel="stylesheet"/>
+      <link href="./p/minn/styles/bootstrap-responsive.min.css" rel="stylesheet"/>
+      <script src="./p/minn/scripts/jquery/dist/jquery.min.js"></script>
+      <script src="./p/minn/scripts/angular/angular.min.js"></script>
+      <script src="./p/minn/scripts/angular-animate/angular-animate.min.js"></script>
+      <script src="./p/minn/scripts/angular-route/angular-route.min.js"></script>
+      <script src="./p/minn/scripts/angular-touch/angular-touch.min.js"></script>
+      <script src="./p/minn/scripts/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+      <script src="./p/minn/scripts/jquery.mobile.min.js"></script>
+      <script src="./p/minn/scripts/mobile-angular-ui/dist/js/mobile-angular-ui.min.js"></script>
+      <script src="./p/minn/scripts/chart.js/dist/chart.min.js"></script>
+      <script src="./p/minn/scripts/jquery-confirm2/dist/jquery-confirm.min.js"></script>
+      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+      <script src="https://www.w3schools.com/lib/w3data.js"></script>
+      <script type="text/javascript">
+        /**
+        * @auth:minn
+        * @qq:394286006
+        */
+      </script>
+    </head>
+    <body class="ui-mobile-viewport ui-overlay-a">
+
+      <div data-role="page" class="ui-responsive-panel" style="margin-top:-20px" id="main-page" data-title="Panel responsive page" data-url="main-page">
+      <div data-role="header" style="height:65px">
+          <h3>首页</h3>
+          <a href="#nav-panel" data-icon="home"  data-iconpos="notext"></a>
+          <a href="#login-form" id="loginpanel" data-icon="gear" data-iconpos="notext"></a>
+      </div><!-- /header -->
+      <div role="main" class="ui-content">
+        <center  id="logo" >
+           <div  style="margin: 0 ;width:230px;height:260px;">
+            <div  class="thumbnail">
+              <img   src='./p/minn/styles/images/394286006.png'>
+              <a ng-href="#login-form" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-carat-r">登录</a>
+            </div>
+          </div>
+        </center>
+    <div class="ui-grid-a" id="wellcome">
+    <div class="ui-block-b" style="width:120px;height:130px;padding-left:5px;">
+      <div   class="thumbnail">
+        <img  src="../assets/chart2.png"/>
+        <center >
+        <a ng-href="#userAnalysis-page" data-transition="flow">用户分析</a>
+       </center>
+      </div>
+    </div>
+    <div class="ui-block-b" style="margin: 0 ;width:120px;height:130px;padding-left:5px">
+      <div   class="thumbnail" >
+        <img  src="../assets/chart1.png"/>
+        <center >
+         报表分析
+       </center>
+      </div>
+    </div>
+    <div class="ui-block-b" style="width:120px;height:130px;padding-left:5px;margin-top:-20px;">
+          <div   class="thumbnail">
+            <img  src="../assets/chart3.png"/>
+            <center >
+            日志分析
+          </ceneter>
+          </div>
+        </div>
+        <div class="ui-block-b" style="width:120px;height:130px;padding-left:5px;margin-top:-20px;">
+              <div   class="thumbnail">
+                <img  src="../assets/chart4.png"/>
+                  <center >
+                外链接
+              </center>
+              </div>
+            </div>
+           
+      </div>
+
+      </div><!-- /content -->
+
+      <div data-role="panel" data-display="push" data-theme="b" id="nav-panel">
+          <ul data-role="listview">
+              <li data-icon="arrow-l"><a href="#" data-rel="close">关闭</a></li>
+               <li><a href="./p/minn/views/zh/about.html" data-transition="slide" >关于</a></li>
+          </ul>
+      </div><!-- /panel -->
+      <div data-role="panel" data-position="right" data-display="reveal" data-theme="a" id="login-form">
+          <form  id="loginform" class="userform">
+              <h2>登录</h2>
+              <label for="name">用户名:</label>
+              <input type="text" name="name" id="name" value="" data-clear-btn="true" data-mini="true">
+              <label for="password">密码:</label>
+              <input type="password" name="password" id="password" value="" data-clear-btn="true" autocomplete="off" data-mini="true">
+              <div class="ui-grid-a">
+                  <div class="ui-block-a"><a href="#" id="loginbtn" onclick="login(event)"   class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-mini">确定</a></div>
+              </div>
+          </form>
+      </div><!-- /panel -->
+      <div data-role="panel" data-position="right" data-display="reveal" data-theme="a" id="login-info">
+          <div data-role="content" >
+             <h2>登录信息</h2>
+             <label id="username"></label>
+          </div>
+        <a href="" id="logoutbtn" onclick="logout()" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-mini">退出</a>
+
+      </div><!-- /panel -->
+  </div>
+
+  <div id="userAnalysis-page" data-role="page" data-url="userAnalysis-page"  w3-include-html="./p/minn/views/zh/UserAnalysis.html"></div>
+  <script src="./p/minn/route.js"></script>
+  <script src="./p/minn/controllers/UserAnalysisController.js"></script>
+
+    </body>
+</html>
